@@ -11,7 +11,6 @@ onAuthStateChanged(auth, (user) => {
 
 // Handle user login with email and password
 const login = async () => {
-    console.log("Hello")
     // Get email and password from input fields
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
