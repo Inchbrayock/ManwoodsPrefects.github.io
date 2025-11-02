@@ -16,11 +16,11 @@
                 <span class="sidebar-title">SRMS</span>
             </div>
             <nav class="sidebar-nav">
-                <a href="#" class="nav-item active" id="dashboard-link" onclick="showContent('dashboard')">Dashboard</a>
-                <a href="#" class="nav-item" id="timetable-link" onclick="showContent('timetable')">Timetable</a>
-                <a href="#" class="nav-item" id="profile-link" onclick="showContent('profile')">Profile</a>
-                <a href="#" class="nav-item" id="settings-link" onclick="showContent('settings')">Settings</a>
-                <a href="index.html" class="nav-item">Logout</a>
+                <a href="#" id="dashboard-link"  class="nav-item active" onclick="showContent('dashboard')">Dashboard</a>
+                <a href="#" id="timetable-link" class="nav-item" onclick="showContent('timetable')">Timetable</a>
+                <a href="#" id="profile-link" class="nav-item" onclick="showContent('profile')">Profile</a>
+                <a href="#" id="settings-link" class="nav-item" onclick="showContent('settings')">Settings</a>
+                <a href="#" id="logout-btn" class="nav-item">Logout</a>
             </nav>
         </aside>
         <main class="main" id="dashboard">
@@ -45,7 +45,6 @@
                         <button>I can't make it</button>
                         <button>Report Incident</button>
                     </div>
-
                 </div>
                 
                 <div class="card">
@@ -184,7 +183,7 @@
             </section>
         </main>
     </div>
-    <script src="script.js"></script>
+    <script type='module' src="scripts/dashboard.js"></script>
 </body>
 </html>
 
