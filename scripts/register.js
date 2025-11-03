@@ -38,7 +38,8 @@ const register = async () => {
             name: name,
             email: email,
             createdAt: new Date().toISOString(),
-            role: "prefect"
+            role: "prefect",
+            approved: false,
         });
 
         // Registration successful - redirect to dashboard
