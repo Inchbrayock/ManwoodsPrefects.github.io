@@ -35,16 +35,16 @@ const register = async () => {
 
         // Store additional user data in Firestore database
         await setDoc(doc(db, "users", user.uid), {
-            name: name,
+            name: name,     
             email: email,
             createdAt: new Date().toISOString(),
             role: "prefect",
             approved: false,
         });
 
-        // Registration successful - redirect to dashboard
+        // Registration successful
+        alert("Registration complete");
         console.log("Registration complete");
-        window.location.href = "dashboard.html";
     } catch (error) {
         // Display error message if registration fails
         console.error(error);
