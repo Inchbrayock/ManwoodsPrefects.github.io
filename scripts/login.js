@@ -43,6 +43,22 @@ const login = async () => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
+    if (!email || !password) {
+        return Swal.fire({
+            title: "Missing Information",
+            text: "Please enter both your email and password to sign in.",
+            icon: "warning",
+            iconColor: "#facc15",
+            confirmButtonText: "OK",
+            customClass: {
+                popup: 'swal-popup-custom',
+                title: 'swal-title-custom',
+                text: 'swal-text-custom',
+                confirmButton: 'swal-confirm-button-custom'
+            }
+        });
+    }
+
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
@@ -53,12 +69,51 @@ const login = async () => {
             window.location.href = "dashboard.html";
         }
         else{
-            alert("Your account is pending approval. Please contact a school captain.")
+            Swal.fire({
+                title: "Your account is pending approval.",
+                text: "Please contact a school captain.",
+                icon: "info",
+                confirmButtonText: "OK",
+                iconColor: "#facc15",
+                customClass: {
+                    popup: 'swal-popup-custom',
+                    title: 'swal-title-custom',
+                    text: 'swal-text-custom',
+                    confirmButton: 'swal-confirm-button-custom'
+                }
+            });
             await signOut(auth);
         }
     } catch (error) {
-        console.error(error);
-        alert(error.message);
+        let errorMessage = "An unexpected error occurred. Please try again later.";
+        if (error.code === 'auth/invalid-email') {
+            errorMessage = "The email address is not valid. Please enter a valid email.";
+        }
+        if (error.code === 'auth/user-not-found') {
+            errorMessage = "No account found with this email. Please check your credentials or register first.";
+        }
+        if (error.code === 'auth/wrong-password') {
+            errorMessage = "Incorrect password. Please try again.";
+        }
+        if (error.code === 'auth/too-many-requests') {
+            errorMessage = "Too many failed attempts. Please wait a few minutes and try again.";
+        }
+        if (error.code === 'auth/network-request-failed') {
+            errorMessage = "Network error. Please check your internet connection and try again.";
+        }
+        Swal.fire({
+            title: "Sign-In Failed",
+            text: errorMessage,
+            icon: "error",
+            iconColor: "#facc15",
+            confirmButtonText: "OK",
+            customClass: {
+                popup: 'swal-popup-custom',
+                title: 'swal-title-custom',
+                text: 'swal-text-custom',
+                confirmButton: 'swal-confirm-button-custom'
+            }
+        });
     }
 };
 
