@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo" aria-hidden="true">
+                    <img src="assets/logo.png" alt="SRMS logo">
+                </div>
+                <span class="sidebar-title">SRMS</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" id="dashboard-link"  class="nav-item active" onclick="showContent('dashboard')">Dashboard</a>
+                <a href="#" id="prefects-link"  class="nav-item" onclick="showContent('prefects')">Prefects</a>
+                <a href="#" id="timetable-link" class="nav-item" onclick="showContent('timetable')">Timetable</a>
+                <a href="#" id="profile-link" class="nav-item" onclick="showContent('profile')">Profile</a>
+                <a href="#" id="settings-link" class="nav-item" onclick="showContent('settings')">Settings</a>
+                <a href="#" id="logout-btn" class="nav-item">Logout</a>
+            </nav>
+        </aside>
+        <main class="main" id="dashboard">
+            <header class="main-header">
+                <h1>Welcome back</h1>
+                <p>Here is your overview.</p>
+            </header>
+            <section class="cards">
+                <div class="card">
+                    <h2>This week</h2>
+                    <ul>
+                        <li>This week you have 5 duties</li>
+                    </ul>
+                    <h2>Today</h2>
+                    <ul>
+                        <li>Today you have 1 duty.</li>
+                        <li>This duty is at Break time and is located in C-block.</li>
+                        <li>For this duty you will be with Joseph.</li>
+                    </ul>
+
+                    <div class='quick-actions'>
+                        <button>I can't make it</button>
+                        <button>Report Incident</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2>Upcoming Events</h2>
+                    <p>More details here.</p>
+                </div>
+                <div class="card">
+                    <h2>Urgent Notices</h2>
+                    <p>And something else.</p>
+                </div>
+            </section>
+        </main>
+
+        <main class="main" id="prefects">
+            <header class="main-header">
+                <h1>Prefects</h1>
+                <p>Here are the prefects.</p>
+            </header>
+            <section class="prefect-container">
+            </section>
+        </main>
+
+        <main class="main" id="timetable">
+            <header class="main-header">
+                <h1>Here is your timetable</h1>
+            </header>
+            <div class="timetable-container">
+                <h3>Week A</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Break time</th>
+                            <th>Lunch time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td></td>
+                            <td>C-Block</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>Math</td>
+                            <td>Science</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>Math</td>
+                            <td>Science</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>Math</td>
+                            <td>Science</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>Math</td>
+                            <td>Science</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="timetable-container">
+                <h3>Week B</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Break time</th>
+                            <th>Lunch time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>Math</td>
+                            <td>Science</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>Math</td>
+                            <td>Science</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>Math</td>
+                            <td>Science</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>Math</td>
+                            <td>Science</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>Math</td>
+                            <td>Science</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <main class="main" id="profile">
+            <header class="main-header">
+                <h1>Welcome back poopoo</h1>
+                <p>Here is your overview.</p>
+            </header>
+            <section class="cards">
+                <div class="card">
+                    <h2>Card One</h2>
+                    <p>Some quick information.</p>
+                </div>
+                <div class="card">
+                    <h2>Card Two</h2>
+                    <p>More details here.</p>
+                </div>
+                <div class="card">
+                    <h2>Card Three</h2>
+                    <p>And something else.</p>
+                </div>
+            </section>
+        </main>
+        <main class="main" id="settings">
+            <header class="main-header">
+                <h1>Welcome back weewee</h1>
+                <p>Here is your overview.</p>
+            </header>
+            <section class="cards">
+                <div class="card">
+                    <h2>Card One</h2>
+                    <p>Some quick information.</p>
+                </div>
+                <div class="card">
+                    <h2>Card Two</h2>
+                    <p>More details here.</p>
+                </div>
+                <div class="card">
+                    <h2>Card Three</h2>
+                    <p>And something else.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script type='module' src="scripts/captains-dashboard.js"></script>
+</body>
+</html>
+
+
